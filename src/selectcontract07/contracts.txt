@@ -1,0 +1,7 @@
+4RDW,Victoria,Prince George,Flowers
+8EKD,Vancouver,Victoria,Vegetable
+8EKD,Vancouver,this,protein
+3HQC,Seattle,Vancouver
+
+3h4s,WINNIPEG,MANITOBA,CABBAGE; 
+8EKD,Vancouver,this,protein
