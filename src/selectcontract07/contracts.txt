@@ -1,7 +1,5 @@
-4RDW,Victoria,Prince George,Flowers
-8EKD,Vancouver,Victoria,Vegetable
-8EKD,Vancouver,this,protein
-3HQC,Seattle,Vancouver
 
-3h4s,WINNIPEG,MANITOBA,CABBAGE; 
-8EKD,Vancouver,this,protein
+3RED,Victoria,Vancouver,CATS
+4RED,Vancouver,Victoria,CATS
+5RED,Price George,Victoria,CATS
+8RED,Price George,Nanaimo,TESTER

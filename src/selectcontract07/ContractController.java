@@ -145,6 +145,9 @@ class ContractController {
                 } //end catch       
         }//end actionPerformed
     }//ends setUpDisplay 
+
+    
 }
+
 
 

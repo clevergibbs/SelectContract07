@@ -53,6 +53,7 @@ public class ContractView extends javax.swing.JFrame {
         jNextButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItemQuit = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuNewContract = new javax.swing.JMenuItem();
 
@@ -106,6 +107,11 @@ public class ContractView extends javax.swing.JFrame {
         jLabelOriginCity.setText("jLabel9");
 
         jBidButton.setText("Bid");
+        jBidButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBidButtonActionPerformed(evt);
+            }
+        });
 
         jPrevButton.setText("Previous");
         jPrevButton.setMaximumSize(new java.awt.Dimension(75, 23));
@@ -185,11 +191,20 @@ public class ContractView extends javax.swing.JFrame {
         );
 
         jMenu1.setText("File");
+
+        jMenuItemQuit.setText("Quit");
+        jMenuItemQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemQuitActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItemQuit);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Edit");
 
-        jMenuNewContract.setText("jMenuItem1");
+        jMenuNewContract.setText("New Contract");
         jMenuNewContract.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuNewContractActionPerformed(evt);
@@ -226,8 +241,18 @@ public class ContractView extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuNewContractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuNewContractActionPerformed
-        // TODO add your handling code here:
+                // TODO add your handling code here:
+        NewContract nc = new NewContract (null, true); 
+        nc.setVisible(true); 
     }//GEN-LAST:event_jMenuNewContractActionPerformed
+
+    private void jBidButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBidButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBidButtonActionPerformed
+
+    private void jMenuItemQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemQuitActionPerformed
+        System.exit(0); 
+    }//GEN-LAST:event_jMenuItemQuitActionPerformed
 
    void addPrevListener(ActionListener listenForPrevButton){
         jPrevButton.addActionListener(listenForPrevButton); 
@@ -268,6 +293,7 @@ public class ContractView extends javax.swing.JFrame {
     this.jComboOriginCity.setModel(model); 
     }
     
+    
     void setContractID(String contractID){
         jLabelContractID.setText(contractID); 
     }
@@ -304,6 +330,7 @@ public class ContractView extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemQuit;
     private javax.swing.JMenuItem jMenuNewContract;
     private javax.swing.JButton jNextButton;
     private javax.swing.JPanel jPanel1;

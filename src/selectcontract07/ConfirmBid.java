@@ -26,7 +26,7 @@ public class ConfirmBid extends javax.swing.JDialog {
      * 
      */
     
-    private final String filename = "C:\\Users\\Cat Panetta\\Documents\\CAMOSUN\\2021\\Software_Engineering\\SelectContract\\src\\selectcontract\\MyContractsBids.txt";
+    private final String filename = "C:\\Users\\Cat Panetta\\Documents\\CAMOSUN\\2021\\Software_Engineering\\SelectContract07\\src\\selectcontract07\\MyContractsBids.txt";
     private String contractID;
     
     public ConfirmBid(JFrame f, boolean m, Contract theContract){
@@ -211,28 +211,22 @@ public class ConfirmBid extends javax.swing.JDialog {
             FileWriter fileWriter = new FileWriter (filename,true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter); 
             PrintWriter pw = new PrintWriter(bufferedWriter);
-            try {
-                if ((jTextName.getText().equals(""))||(jTextName.getText().equals("null")) || (!jTextName.getText().chars().allMatch(Character::isLetter))) {
-                    String messageFailure = "Please input your name.  No non-alphabetics please"; 
-                    JOptionPane.showMessageDialog(null, messageFailure); 
-                } else{
+            if ((jTextName.getText().equals(""))||(jTextName.getText().equals("null")) || (!jTextName.getText().chars().allMatch(Character::isLetter))) {
+                String messageFailure = "Please input your name.  No non-alphabetics please";
+                JOptionPane.showMessageDialog(null, messageFailure);
+            } else{
                 String theBid = jTextName.getText() + ", " + jLabelContractID.getText() + ", " + jSpinner1.getValue() +", "
                         + currentDate; 
                 pw.println("");
                 
                 pw.append(theBid);
-                pw.println(""); 
+                pw.println("");
                 String messageSuccess = "Your name as " + jTextName.getText() + " with bid amount $" + jSpinner1.getValue() + " has been successfully saved."; 
                 JOptionPane.showMessageDialog(null, messageSuccess);
-                }
-
-            } catch (IOException ex) {
-                System.out.println(ex.getMessage()); 
-            } finally{ 
-                jTextName.setText(""); 
-                jSpinner1.setValue(100);
-                pw.close(); 
             }
+            jTextName.setText("");
+            jSpinner1.setValue(100);
+            pw.close();
         }
         catch (IOException ex) {
                 System.out.println(ex.getMessage());  

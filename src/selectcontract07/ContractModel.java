@@ -21,6 +21,7 @@ class ContractModel {
     private int contractCounter; 
     private SortedSet<String> originCityList; 
     private ArrayList<Contract> theContractsAll; 
+    public static ArrayList<String> contractIDList; 
     
     
     ContractModel() throws Exception{ 
@@ -28,7 +29,8 @@ class ContractModel {
         theContracts = new ArrayList<>();
         theContractsAll = new ArrayList<>(); 
         originCityList = new TreeSet<>(); 
-        String filename = "C:\\Users\\Cat Panetta\\Documents\\CAMOSUN\\2021\\Software_Engineering\\SelectContract\\src\\selectcontract\\contracts.txt";
+        contractIDList = new ArrayList<>(); 
+        String filename = "C:\\Users\\Cat Panetta\\Documents\\CAMOSUN\\2021\\Software_Engineering\\SelectContract07\\src\\selectcontract07\\contracts.txt";
         try { 
                 FileReader fileReader = new FileReader(filename); 
                 BufferedReader bufferedReader = new BufferedReader(fileReader); 
@@ -50,6 +52,7 @@ class ContractModel {
                     theContracts.add(dataContract); 
                     theContractsAll.add(dataContract);
                     originCityList.add(originCity); 
+                    contractIDList.add(contractID); 
                     
                     }
                     
@@ -97,6 +100,9 @@ class ContractModel {
         return contractCounter; 
     }
     
+    public static ArrayList getContractIDList(){
+        return contractIDList; 
+    }
     public void nextContract(){ 
         int end = theContracts.size()-1; 
         if (contractCounter != end){ 
